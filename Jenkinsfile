@@ -7,10 +7,12 @@ pipeline{
     }
     
     stages{
-        //stage('Git-checkout'){
+        stage('Git-checkout'){
             steps{
-                git branch: 'dev' , url: 'https://github.com/KP-Tejaswini/web-application.git'
+                //git branch: 'dev' , url: 'https://github.com/KP-Tejaswini/web-application.git'
+                git branch: 'dev', credentialsId: 'github-token', url: 'https://github.com/KP-Tejaswini/web-application.git'
             }
+        }
         stage('Code Compile'){
             steps{
                 sh 'mvn compile'
