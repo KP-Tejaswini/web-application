@@ -7,7 +7,7 @@ pipeline{
     }
     
     stages{
-        stage('Git-checkout'){
+        //stage('Git-checkout'){
             steps{
                 git branch: 'dev' , url: 'https://github.com/KP-Tejaswini/web-application.git'
             }
